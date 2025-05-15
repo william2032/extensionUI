@@ -7,15 +7,18 @@
 body {
     max-width: 1220px;
     background-size: cover;
-    height: 100%;
     font-family: 'Noto Sans JP', sans-serif;
     background: linear-gradient(to bottom, #040918, #091540) no-repeat;
+
 }
 
 .container {
-    margin: 50px 90px;
+    width: 100%;
+    margin: 150px ;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .header {
@@ -113,7 +116,7 @@ body {
 
 .lists-body {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
@@ -123,7 +126,6 @@ body {
     height: auto;
     padding: 15px;
    align-content:space-between;
-
     transition: opacity 0.3s ease;
 }
 
@@ -166,6 +168,18 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.extension-footer > .btn-remove {
+    color: white;
+    background: hsl(224, 26%, 16%);
+    padding: 8px;
+    border: 1px solid hsl(216, 6%, 85%);
+    border-radius: 8px;
+    cursor: pointer;
+}
+.extension-footer > .btn-remove:hover {
+    color:hsl(224, 26%, 16%);
+    background: hsl(216, 6%, 85%);
 }
 
 .toggle-switch {

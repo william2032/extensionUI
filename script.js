@@ -119,7 +119,7 @@ function renderExtensions(extensionsData, filter = 'all') {
                 </div>
             </div>
             <div class="extension-footer">
-                <button class="">Remove</button>
+                <button class="btn-remove">Remove</button>
                 <label class="toggle-switch">
                     <input type="checkbox" class="toggle-checkbox" ${extension.isActive ? 'checked' : ''}>
                     <span class="toggle-slider"></span>
@@ -128,7 +128,7 @@ function renderExtensions(extensionsData, filter = 'all') {
         </div>
     `).join('');
 
-    container.innerHTML = extensionsHTML || '<p class="no-results">No extensions found matching your criteria.</p>';
+    container.innerHTML = extensionsHTML || '<p class="no-results">No extensions found.</p>';
 
     document.querySelectorAll('.toggle-checkbox').forEach((checkbox, index) => {
         checkbox.addEventListener('change', function () {
@@ -138,15 +138,13 @@ function renderExtensions(extensionsData, filter = 'all') {
     });
 
     // reattach event listeners to remove buttons
-    document.querySelectorAll('.remove-btn').forEach(button => {
+    document.querySelectorAll('.btn-remove').forEach(button => {
         button.addEventListener('click', function () {
             const card = this.closest('.extension-card');
             const extensionName = card.querySelector('.extension-name').textContent;
             if (confirm(`Are you sure you want to remove ${extensionName}?`)) {
                 card.style.opacity = '0';
-                setTimeout(() => {
                     card.remove();
-                });
             }
         });
     });
