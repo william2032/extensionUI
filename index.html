@@ -9,14 +9,14 @@
     <title>Browser extensions manager UI</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark-mode">
 <div class="container">
     <!--    logo  and toggle  -dark/light-->
     <div class="header">
         <div class="logo">
             <img src="./assets/images/logo.svg" alt="logo">
         </div>
-        <div class="dark-light">
+        <div onclick=" toggleMode()" class="icon">
             <img src="./assets/images/icon-sun.svg" alt="dark-light">
         </div>
     </div>
@@ -32,7 +32,6 @@
                 <button class="filter-btn" data-filter="inactive">Inactive</button>
             </div>
         </div>
-        <!--render DOM here using Js-->
         <div class="lists-body" id="lists-body"></div>
     </div>
 </div>

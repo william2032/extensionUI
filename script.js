@@ -15,6 +15,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
 let extensions = [];
 
+function toggleMode() {
+    document.body.classList.toggle("dark-mode");
+    const icon = document.querySelector(".icon img");
+    if (document.body.classList.contains("dark-mode")) {
+        icon.src = "./assets/images/icon-sun.svg";
+        icon.alt = "Light Mode";
+    } else {
+        icon.src = "./assets/images/icon-moon.svg";
+        icon.alt = "Dark Mode";
+    }
+    document.body.classList.toggle("light-mode");
+    if (document.body.classList.contains("dark-mode")) {
+        document.getElementById("light-mode").style.display = "block";
+        document.getElementById("dark-mode").style.display = "none";
+    } else {
+        document.getElementById("light-mode").style.display = "none";
+        document.getElementById("dark-mode").style.display = "block";
+    }
+}
+
 function extensionsData() {
     extensions = [
         {
@@ -96,7 +116,7 @@ function extensionsData() {
 function renderExtensions(extensionsData, filter = 'all') {
     const container = document.getElementById('lists-body');
 
-    // Filter extensions based on selection
+
     const filteredExtensions = extensionsData.filter(ext => {
         if (filter === 'all') return true;
         if (filter === 'active') return ext.isActive;
@@ -137,14 +157,14 @@ function renderExtensions(extensionsData, filter = 'all') {
         });
     });
 
-    // reattach event listeners to remove buttons
+
     document.querySelectorAll('.btn-remove').forEach(button => {
         button.addEventListener('click', function () {
             const card = this.closest('.extension-card');
             const extensionName = card.querySelector('.extension-name').textContent;
             if (confirm(`Are you sure you want to remove ${extensionName}?`)) {
                 card.style.opacity = '0';
-                    card.remove();
+                card.remove();
             }
         });
     });

@@ -9,12 +9,13 @@ body {
     background-size: cover;
     font-family: 'Noto Sans JP', sans-serif;
     background: linear-gradient(to bottom, #040918, #091540) no-repeat;
-
+    height: 100vh;
 }
+
 
 .container {
     width: 100%;
-    margin: 150px ;
+    margin: 150px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,29 +38,29 @@ body {
 
 .logo img {
     width: 150px;
-   }
-
-.dark-light {
-    background-color: hsl(227, 23%, 24%);
-    padding: 10px;
-    border-radius: 5px;
-    height: 20px;
-    text-align: center;
 }
+
+.icon {
+    cursor: pointer;
+}
+
 .list-container {
     display: flex;
     flex-direction: column;
 }
+
 .list-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .list-title h1 {
     font-size: 30px;
     color: hsl(222, 11%, 82%);
     font-weight: 400;
 }
+
 .filter-list-buttons {
     display: flex;
     justify-content: center;
@@ -67,6 +68,7 @@ body {
     margin-bottom: 30px;
     flex-wrap: wrap;
 }
+
 .filter-btn {
     padding: 10px 20px;
     border-radius: 14px;
@@ -77,13 +79,15 @@ body {
     font-size: 16px;
     cursor: pointer;
     transition: transform 0.3s ease;
-    border: 1px solid  #d4d4d4;
+    border: 1px solid #d4d4d4;
 
 }
+
 .active {
     background-color: hsl(3, 84%, 64%);
     color: hsl(339, 60%, 16%);
 }
+
 .filter-btn:hover {
     transform: scale(1.1);
 }
@@ -101,7 +105,7 @@ body {
 
 .list-title h1 {
     font-size: 24px;
-    color:hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 100%);
 }
 
 .filter-list-buttons .filter-btn {
@@ -125,7 +129,7 @@ body {
     border-radius: 10px;
     height: auto;
     padding: 15px;
-   align-content:space-between;
+    align-content: space-between;
     transition: opacity 0.3s ease;
 }
 
@@ -139,12 +143,13 @@ body {
 }
 
 .extension-logo {
-    width:45px;
-    height:45px;
+    width: 45px;
+    height: 45px;
     margin-right: 10px;
     border-radius: 5px;
 }
-.extension-texts{
+
+.extension-texts {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -152,10 +157,11 @@ body {
     gap: 8px;
 
 }
+
 .extension-name {
     font-size: 18px;
     margin: 0;
-    color:hsl(210, 12%, 90%);
+    color: hsl(210, 12%, 90%);
 }
 
 .extension-description {
@@ -169,6 +175,7 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+
 .extension-footer > .btn-remove {
     color: white;
     background: hsl(224, 26%, 16%);
@@ -177,8 +184,9 @@ body {
     border-radius: 8px;
     cursor: pointer;
 }
+
 .extension-footer > .btn-remove:hover {
-    color:hsl(224, 26%, 16%);
+    color: hsl(224, 26%, 16%);
     background: hsl(216, 6%, 85%);
 }
 
@@ -227,16 +235,61 @@ body {
     transform: translateX(20px);
 }
 
-.remove-btn button {
-    color: #ff5555;
-    font-size: 14px;
-    cursor: pointer;
-    text-transform: uppercase;
+body .dark-mode {
+    background: linear-gradient(to bottom, #050a1d, #081235);
+    height: fit-content;
 }
 
-.no-results {
-    color: #fff;
-    text-align: center;
-    grid-column: 1 / -1;
+body.light-mode {
+    background: linear-gradient(to bottom, hsl(206, 73%, 96%), hsl(201, 64%, 96%));
+    color: black;
+
+    .header {
+        background-color: hsl(220, 100%, 99%);
+        border-bottom: none;
+    }
+
+    .icon {
+        background-color: hsl(60, 3%, 93%);
+        padding: 8px;
+        border-radius: 8px;
+
+    }
+
+    .logo {
+
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-color: hsl(224, 26%, 16%);
+        color: black;
+    }
+
+    .list-title h1 {
+        color: hsl(227, 70%, 13%);
+        font-size: 30px;
+        font-weight: 500;
+    }
+
+    .extension-card {
+        background: hsl(220, 100%, 99%);
+    }
+
+    .extension-name {
+        color: hsl(226, 49%, 18%);
+    }
+
+    .filter-btn {
+        background: hsl(200, 100%, 99%);
+        color: hsl(226, 49%, 18%);
+    }
+
+    .active {
+        background-color: hsl(3, 84%, 64%);
+    }
+
+    .btn-remove {
+        background-color: hsl(180, 100%, 100%);
+        color: hsl(226, 7%, 48%);
+    }
 }
 
